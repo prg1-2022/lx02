@@ -1,25 +1,42 @@
 # lx02 の例題
 
-## 交通信号の例: `trafficlight.scala`
+## 動かし方
 
-### sbt からの実行方法
+ターミナルで `build.sbt` のあるフォルダに移動し、`sbt` コマンドを実行すると以下のように `sbt` が起動します。
 
-    runMain TrafficLightApp
+~~~
+[info] [launcher] getting org.scala-sbt sbt 1.7.2  (this may take some time)...
+[info] welcome to sbt 1.7.2 (Homebrew Java 18.0.2.1)
+[info] loading project definition from /Users/wakita/Dropbox/doc/classes/prg1/lx02/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to root (in build file:/Users/wakita/Dropbox/doc/classes/prg1/lx02/)
+[info] sbt server started at local:///Users/wakita/.sbt/1.0/server/f6ef78b5513c44bbb6c4/sock
+[info] started sbt server
+sbt:root>
+~~~
 
-Scala のプログラムを眺めて、その実行方法を知る方法：
+`sbt:root>` が `sbt` のプロンプトで、`sbt` のコマンドの入力を促しています。
 
-1. `object` 定義を探す
-1. そのオブジェクトに適切な`main`関数を定義していたら、`runMain そのオブジェクト名`
-1. そのオブジェクトが`extends App`様式で定義されていたら、`runMain そのオブジェクト名`
+ここで `run` コマンドを実行します。`run` を入力して下さい。
 
-`trafficlight.scala`を眺めると、`TrafficLightApp`オブジェクトが`extends App`様式で定義されています。このため、このプログラムは`runMain TrafficLightApp`を実行すればよいことがわかります。
+すると以下のような 7つの項目からなるメニューが表示されます。
 
-## タイマーの例 (`timer1.scala` と `timer2.scala`)
+~~~
+sbt:root> run
 
-お詫び：実行開始時にフォント関連のエレーメッセージが表示され、TimerApp1のフォントが異様にきたなかったとしても我慢してもらいたい。これは最近、Javaについて報告されているバグに由来するらしいです。
+Multiple main classes detected. Select one to run:
+ [1] AutomatonApp
+ [2] PotonApp
+ [3] ScheduledTrafficLightApp
+ [4] TimerApp1
+ [5] TimerApp2
+ [6] TrafficLightApp
 
-## 決定性オートマトンのシミュレータの例: `automaton.scala`
+Enter number:
+~~~
 
-## 点滅間隔が指定された信号の例: `scheduledtrafficlight.scala`
+番号づけされた各項目がサンプルコードの実行に対応しています。全部で７つのサンプルを用意しました。番号を入力すると、そのプログラムの実行が始まり、画面のどこかにアプリケーションのウィンドウが開くはずです。サンプルコードによっては、アプリケーションのウィンドウは退屈かもしれません。かわりにターミナルになにか表示されると思います。
 
-## ポトンゲームの例: `poton.scala`
+サンプルコードによっては永遠に実行が止まらないものもあります。このようなコードを強制終了するには、アプリケーションのウィンドウをクリックして通常の終了手順のとおりです（Mac ならアプリケーション・メニューから終了を選択）。
+
+
